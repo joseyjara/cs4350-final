@@ -30,6 +30,6 @@
 
 @section('footer')
     @parent
-    @include('footer)
+    @include('footer')
 
 @endsection

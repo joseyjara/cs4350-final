@@ -14,8 +14,10 @@ class CreateDealerRecordsTable extends Migration {
 	{
 		Schema::create('dealerRecords', function(Blueprint $table)
 		{
-			$table->increments('id');
+			$table->increments('Dealer_Key');
 			$table->string("license", 255);
+			$table->varchar("licenseType", 2);
+			$table->varchar("licenseExp", 2);
 			$table->longtext("name");
 			$table->longtext("business");
 			$table->string("street", 255);
