@@ -1,0 +1,101 @@
+h1, h2, h3, h4, h5, h6, table th,.map, h4 a, h3 a, h2 a, h1 a, .navbar-brand, .nav-link, .ghost_button{
+    font-family: 'Raleway', sans-serif;
+
+}
+
+li, ul, ol, a, p, table td, table tr, input, form, strong, abbr{
+    font-family: 'Lora', serif;
+
+}
+
+.line-break{
+  border:2px solid #2c3e50;
+}
+.lg-icon{
+  font-size:75px;
+  margin-top:5%;
+  margin-bottom:2%;
+  color:#2c3e50;
+  
+}
+
+.main_call{
+  text-align:center;
+}
+
+.slideanim {visibility:hidden;}
+.slider {
+    /* The name of the animation */
+    animation-name: slider;
+    -webkit-animation-name: slider;
+    /* The duration of the animation */
+    animation-duration: 1s;
+    -webkit-animation-duration: 1s;
+    /* Make the element visible */
+    visibility: visible;
+}
+
+/* Go from 0% to 100% opacity (see-through) and specify the percentage from when to slide in the element along the Y-axis */
+@keyframes slider {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(70%);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0%);
+    }
+}
+@-webkit-keyframes slider {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(70%);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0%);
+    }
+}
+
+@media (max-width: 544px){
+    .main_intro-img{
+        width: 15%;
+    }
+
+    .carousel-caption {
+        z-index: 10;
+        margin-bottom:0%;
+
+    }
+    .carousel-caption h1{
+        font-size: 2.5em;
+
+    }
+
+}
+
+@media (min-width: 768px){
+    .main_intro-img{
+        width:35%;
+    }
+
+
+}
+
+@media (min-width: 992px){
+    .main_intro-img{
+        width:45%;
+    }
+    .carousel-caption {
+        z-index: 10;
+        margin-bottom:0%;
+
+
+    }
+    .carousel-caption h1{
+        font-size: 5em;
+        font-weight:bold;
+    }
+
+
+}

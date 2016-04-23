@@ -15,6 +15,10 @@
 //Let's use a resource controller.
 Route::resource('/', 'HomeController');
 
+//Routing Dealer related stuff
+Route::get("dealer/{id}", array('uses' =>'DealerController@view'));
+Route::resource('dealer','DealerController' );
+
 /**
 Route::get('/', function()
 {
@@ -23,13 +27,18 @@ Route::get('/', function()
 **/
 
 // route to show the login form
-Route::get('login', array('uses' => 'HomeController@showLogin'));
+Route::get('login', array('uses' => 'LoginController@index'));
 
 // route to process the form
-Route::post('login', array('uses' => 'HomeController@doLogin'));
+Route::post('dologin', array('uses' => 'LoginController@login'));
 
 // route to logout
-Route::get('logout', array('uses' => 'HomeController@doLogout'));
+Route::get('logout', array('uses' => 'LoginController@doLogout'));
+
+// route to get register user view
+Route::get('users', array('uses' => 'LoginController@getRegister'));
 
 // route to register user
-Route::controller('users', 'UsersController');
+Route::post('users/create', array('uses' => 'LoginController@create'));
+
+

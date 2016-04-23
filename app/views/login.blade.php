@@ -11,16 +11,16 @@
 
 @section('content')
 
-<!-- app/views/login.blade.php --><
+<!-- app/views/login.blade.php -->
 
 <!doctype html>
 <html>
 <head>
     <title>Look at me Login</title>
 </head>
-<body><
+<body>
 
-{{ Form::open(array('url' => 'login')) }}
+{{ Form::open(array('url' => 'dologin')) }}
 <h1>Login</h1>
 
 <!-- if there are login errors, show them here -->
@@ -39,7 +39,7 @@
     {{ Form::password('password') }}
 </p>
 
-<p>{{ Form::submit('Submit!') }}</p>
+<p>{{ Form::submit('Submit') }}</p>
 
 <a href="{{ URL::to('logout') }}">Logout</a>
 {{ Form::close() }}
@@ -47,8 +47,3 @@
 @endsection
 
 
-@section('footer')
-@parent
-@include('footer)
-
-@endsection
