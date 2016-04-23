@@ -39,7 +39,7 @@
        <tr>
        <td>{{$dealer->Dealer_Key}}</td>  
        <td>{{$dealer->license}}</td>
-       <!--<td>{{$dealer->rating}}</td>-->
+         
        <td>{{$dealer->name}}</td>
        <td>{{$dealer->business}}</td>
        <td>{{$dealer->street}}</td>

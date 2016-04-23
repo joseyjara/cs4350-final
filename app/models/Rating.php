@@ -2,5 +2,5 @@
 
 class Rating extends Eloquent{
   protected $table = 'ratings';
-  protected $primaryKey = "User_Key";
+  protected $primaryKey = "Rating_Key";
 }

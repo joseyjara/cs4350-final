@@ -11,8 +11,8 @@ class DealerController extends BaseController {
 		
 		//Test
 		//For each dealer, we need to determine a rating.
-		$test_rate = Rating::find(1);
-		
+		$rating = Rating::find(1);
+		var_dump($rating);
     $script = View::make("dealer/script");
     //Echo them to the page we specify.
 		return View::make('dealer/view_all', ["dealers" => $dealers, "script" =>$script]);
