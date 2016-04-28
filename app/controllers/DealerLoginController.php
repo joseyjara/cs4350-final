@@ -1,6 +1,6 @@
 <?php
 
-class LoginController extends BaseController {
+class DealerLoginController extends BaseController {
 
   /*
   |--------------------------------------------------------------------------
@@ -17,7 +17,7 @@ class LoginController extends BaseController {
   }
 
   public function index(){
-      return View::make('login');
+      return View::make('dealerLogin');
 
   }
 
@@ -27,26 +27,25 @@ class LoginController extends BaseController {
       //Perform a check here
     // validate the info, create rules for the inputs
   $rules = array(
-    'email' => 'required|email', // make sure the email is an actual email
-    'password' => 'required|alphaNum|min:3' // password can only be alphanumeric and has to be greater than 3 characters
+    'business' => 'required' 
   );
 
   // run the validation rules on the inputs from the form
   $validator = Validator::make(Input::all(), $rules);
-
+  
   // if the validator fails, redirect back to the form
   if ($validator->fails()) {
-    return Redirect::to('login')
+    return Redirect::to('Dealerlogin')
       ->withErrors($validator)// send back all errors to the login form
       ->withInput(Input::except('password')); // send back the input (not the password) so that we can repopulate the form
   } else {
 
     // create our user data for the authentication
     $userdata = array(
-      'email' => Input::get('email'),
-      'password' => Input::get('password')
+      'business' => Input::get('business'),
+      'license' => Input::get('license')
     );
-    
+   die();
     // attempt to do the login
     if (Auth::attempt($userdata)){
       // validation successful!
@@ -56,13 +55,13 @@ class LoginController extends BaseController {
       
       //We need to place this in the session.
       Session::put("is_logged_in", true);
-      Session::put("email", Input::get('email'));
+      
       
       return Redirect::to('/');
 
     } else {
       // validation not successful, send back to form
-      return Redirect::to('login');
+      return Redirect::to('dealerLogin');
       
     }
 
@@ -73,11 +72,7 @@ class LoginController extends BaseController {
 
   public function doLogout()
   {
-    
     Auth::logout(); // log the user out of our application
-    Session::flush();
-    
-    
     return Redirect::to('login'); // redirect the user to the login screen
   }
 
@@ -94,7 +89,7 @@ class LoginController extends BaseController {
             // $request->user() returns an instance of the authenticated user...
     }
       
-      return View::make('profile');
+      
       //Pull our account data.
       //Use either post or get to retrieve it. 
       

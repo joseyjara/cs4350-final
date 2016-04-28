@@ -6,13 +6,12 @@
     {{ HTML::style( asset('css/bootstrap.min.css') ) }}
     {{ HTML::style(asset('css/bootstrap.min.css')) }}
     {{ HTML::style( asset('css/base.css') ) }}
-    {{  (isset($script)) ? $script : ' ' }}
-  
+    {{ HTML::style( asset("//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"))}}
 
 </head>
-<body>
+<body> 
 @section('nav')
-    @show
+  @show
 
 
 

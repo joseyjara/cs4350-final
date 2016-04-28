@@ -11,7 +11,7 @@
 
 @section('content')
 
-<!-- app/views/login.blade.php -->
+<!-- app/views/dealerLogin.blade.php -->
 
 <!doctype html>
 <html>
@@ -20,22 +20,22 @@
 </head>
 <body>
 
-{{ Form::open(array('url' => 'login')) }}
-<h1>User Login</h1>
+{{ Form::open(array('url' => 'Dealerlogin')) }}
+<h1>Dealer Login</h1>
 
 <!-- if there are login errors, show them here -->
 <p>
-    {{ $errors->first('email') }}
-    {{ $errors->first('password') }}
+    {{ $errors->first('business') }}
+    {{ $errors->first('license') }}
 </p>
 
 <p>
-    {{ Form::label('email', 'Email Address') }}
-    {{ Form::text('email', Input::old('email'), array('placeholder' => 'awesome@awesome.com')) }}
+    {{ Form::label('business', 'business') }}
+    {{ Form::text('business', Input::old('business'), array('placeholder' => 'business')) }}
 </p>
 
 <p>
-    {{ Form::label('password', 'Password') }}
+    {{ Form::label('license', 'license') }}
     {{ Form::password('password') }}
 </p>
 
@@ -45,5 +45,3 @@
 {{ Form::close() }}
 
 @endsection
-
-

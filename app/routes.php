@@ -16,7 +16,9 @@
 Route::resource('/', 'HomeController');
 
 //Routing Dealer related stuff
-Route::get("dealer/{id}", array('uses' =>'DealerController@view'));
+Route::post("dealer/view", array("uses"=>"DealerController@view"));
+Route::get("dealer/view", array("uses" => "DealerController@view"));
+Route::post("dealer/submit_comment", array("uses" => "DealerController@submit_comment"));
 Route::resource('dealer','DealerController' );
 
 /**
@@ -30,15 +32,24 @@ Route::get('/', function()
 Route::get('login', array('uses' => 'LoginController@index'));
 
 // route to process the form
-Route::post('dologin', array('uses' => 'LoginController@login'));
+Route::post('login', array('uses' => 'LoginController@login'));
 
 // route to logout
 Route::get('logout', array('uses' => 'LoginController@doLogout'));
 
 // route to get register user view
-Route::get('users', array('uses' => 'LoginController@getRegister'));
+Route::get('users', array('uses' => 'UsersController@getRegister'));
 
 // route to register user
-Route::post('users/create', array('uses' => 'LoginController@create'));
+Route::post('create', array('uses' => 'UsersController@create'));
+
+// route to show the login form
+Route::get('Dealerlogin', array('uses' => 'DealerLoginController@index'));
+
+// route to process the form
+Route::post('Dealerlogin', array('uses' => 'DealerLoginController@login'));
+
+// route to show the login form
+Route::get('profile', array('uses' => 'LoginController@account'));
 
 

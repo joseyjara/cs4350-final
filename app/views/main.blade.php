@@ -28,7 +28,7 @@
                     <div class="carousel-caption text-right">
                         <h1>The Black Cabinet</h1>
                         <p>Check out registered gun dealers and available deals throughout Puerto Rico.</p>
-                        <p><a class="btn btn-lg btn-primary" href="#" role="button">Look Up Dealers</a></p>
+                        <p>{{ HTML::link('dealer', 'Look Up Dealers', ["class"=>"btn btn-primary"]) }}</p>
                     </div>
                 </div>
             </div>
@@ -38,7 +38,7 @@
                     <div class="carousel-caption text-xs-left">
                         <h1>President Jose Wants You!</h1>
                         <p>Join the revolution! Make your pledge now!</p>
-                        <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+                        <p><a class="btn btn-lg btn-primary" href="users" role="button">Sign up today</a></p>
                     </div>
                 </div>
             </div>
@@ -67,19 +67,19 @@
         <div class="col-sm-4">
           <span class="lg-icon glyphicon glyphicon-lock"></span> 
           <h3>
-            Look up Dealer
+        {{ HTML::link('dealer', 'Look Up Dealer') }}       
           </h3>
         </div>
          <div class="col-sm-4">
            <span class="lg-icon glyphicon glyphicon-user"></span>
            <h3>
-             Check your Account
+        {{ HTML::link('profile', 'Check Your Account') }}       
            </h3>
          </div>
          <div class="col-sm-4">
            <span class="lg-icon glyphicon glyphicon-cog"></span>
            <h3>
-             About Us
+             Created By: Hayden Beadles, El Presidente, Kody Lundell
            </h3>
          </div>
 
@@ -90,16 +90,6 @@
 <hr class="line-break" />
 
 <div class="jumbotron main_about">
-  
-  <h1>
-    What We're About
-  </h1>
-  
-  <p>
-    
-    
-    
-  </p>
   
   
   

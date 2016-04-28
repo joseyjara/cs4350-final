@@ -22,7 +22,10 @@
     <hr class="line-break" />
   </div>
   <div class="main_contain container-fluid">
+{{ Form::open(array('url' => 'dealer/view', 'class' =>'form dealer_form')) }}
+    <input type="hidden" id="id"name="id" />
     <table class="dealer_table table table-striped">
+      
     <thead>
       <th>Number</th>
       <th>License</th>
@@ -36,10 +39,11 @@
       </tfoot>  
      <tbody> 
        @foreach($dealers as $dealer)
+       
        <tr>
        <td>{{$dealer->Dealer_Key}}</td>  
        <td>{{$dealer->license}}</td>
-         
+       <td class="rating">{{$dealer->total}}</td>  
        <td>{{$dealer->name}}</td>
        <td>{{$dealer->business}}</td>
        <td>{{$dealer->street}}</td>
@@ -48,7 +52,7 @@
        @endforeach
       </tbody>
     </table>
-    
+    {{Form::close()}}
     {{ $dealers->links() }}
 
   </div>
@@ -63,5 +67,8 @@
 @section('footer')
     @parent
     @include('../footer')
+<?=isset($script) ? $script : '' ?>  
+
+
 
 @endsection
